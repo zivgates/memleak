@@ -1,11 +1,5 @@
 #include <Windows.h>
-#include <basetsd.h>
 #include <wchar.h>
-
-
-
-
-
 
 
 INT wmain(INT argc, WCHAR* argv[]){
@@ -26,9 +20,7 @@ INT wmain(INT argc, WCHAR* argv[]){
 
     while(1){
         totalAllocated+=size;
-        //LPVOID ptr = malloc(size);
         LPVOID ptr = HeapAlloc(GetProcessHeap(), HEAP_ZERO_MEMORY, size);
-        //LPVOID ptr = VirtualAlloc(NULL, size, MEM_COMMIT | MEM_RESERVE, PAGE_EXECUTE_READWRITE);
         if(!ptr){
             wprintf(L"[-] Error Allocating Memory\n");
             return -1;
