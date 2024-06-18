@@ -28,7 +28,7 @@ INT wmain(INT argc, WCHAR* argv[]){
         if(isPaged == TRUE){
             BOOL result = VirtualLock(ptr, size);
             if(!result){
-                wprintf(L" [-] Failed Locking Memory into RAM\n");
+                wprintf(L"[-] Failed Locking Memory into RAM\n");
             }
         }
         wprintf(L"[+] Succsessfully Created %p with size of %d Kilobytes, Leaked %d Kilobytes\n", ptr, size / 1024, totalAllocated / 1024);
